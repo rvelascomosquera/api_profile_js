@@ -64,18 +64,11 @@ const getCard = async (data) => {
 function update() {
   const btn = document.querySelector('.edit') 
   btn.textContent = 'Guardar'
-  if(btn.textContent === 'Guardar'){
-    const editInput = document.querySelector('.hobbies__input')
-    editInput.removeAttribute('disabled')
-    editInput.classList.toggle('update--Input')
-    const updateInput = editInput.value
-    updateHobbies(updateInput)
-    alert('Dato Actualizado')
-    btn.textContent = 'Editar'
-  } else {
-    editInput.classList.toggle('update--Input')
-  }
-
+  const editInput = document.querySelector('.hobbies__input')
+  editInput.removeAttribute('disabled')
+  editInput.classList.toggle('update--Input')
+  const updateInput = editInput.value
+  updateHobbies(updateInput)
   
 }
 
@@ -94,6 +87,7 @@ function ptchHobbiwes(dato) {
     })
     .then((res) => {
       console.log('dato actualizado')
+      alert('Datos Actualizados')
     })
     .catch((err) => {
       alert('No se puedo actualizar los datos');
